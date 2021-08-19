@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const data = [
     {
@@ -39,7 +39,7 @@ const data = [
 ];
 
 function Contact(props) {
-    const [memberList, setMemberList] = useState(data);
+    //const [memberList, setMemberList] = useState(data);
     const [searchKeyword, setSearchKeyword] = useState("");
     const [selectedMember, setSelectedMember] = useState();
     const [dirtyContent, setDirtyContent] = useState(true);
@@ -57,6 +57,7 @@ function Contact(props) {
         }
         setSelectedMember();
     };
+    
     return (
         <div className="container">
             <h1 className="subject">이종현의 연락처</h1>
@@ -67,7 +68,7 @@ function Contact(props) {
                 </div>
                 <div className="contact-list">
                     <ul>
-                        {memberList.filter((member) => {
+                        {data.filter((member) => {
                             if(searchKeyword === ""){
                                 return member;
                             }
@@ -86,7 +87,7 @@ function Contact(props) {
                 </div>
                 <div className="col right">
                 <div className="details">
-                    {(memberList.length > 0)&&(selectedMember)&&(dirtyContent)?
+                    {(data.length > 0)&&(selectedMember)&&(dirtyContent)?
                     <ul className="info">
                         <li>이름: {selectedMember.name}</li>
                         <li>부서: {selectedMember.department}</li>
