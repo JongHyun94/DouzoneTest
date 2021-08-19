@@ -57,9 +57,6 @@ function Contact(props) {
         }
         setSelectedMember();
     };
-    useEffect(() => {
-
-    },[searchKeyword]);
     return (
         <div className="container">
             <h1 className="subject">이종현의 연락처</h1>
